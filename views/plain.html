@@ -11748,24 +11748,101 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
 &lt;script&gt;
-    var code_show=true; //true -&gt; hide code at first
+  jQuery(document).ready(function($) {
 
-    function code_toggle() {
-        $(&#39;div.prompt&#39;).hide(); // always hide prompt
+  $(window).load(function(){
+    $(&#39;#preloader&#39;).fadeOut(&#39;slow&#39;,function(){$(this).remove();});
+  });
 
-        if (code_show){
-            $(&#39;div.input&#39;).hide();
-        } else {
-            $(&#39;div.input&#39;).show();
-        }
-        code_show = !code_show
+  });
+&lt;/script&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+  div#preloader { position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      background: #fff url(&#39;http://preloaders.net/preloaders/720/Moving%20line.gif&#39;) no-repeat center center;
+  }
+
+&lt;/style&gt;
+
+&lt;div id=&quot;preloader&quot;&gt;&lt;/div&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<script>
+  jQuery(document).ready(function($) {
+
+  $(window).load(function(){
+    $('#preloader').fadeOut('slow',function(){$(this).remove();});
+  });
+
+  });
+</script>
+
+<style type="text/css">
+  div#preloader { position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      background: #fff url('http://preloaders.net/preloaders/720/Moving%20line.gif') no-repeat center center;
+  }
+
+</style>
+
+<div id="preloader"></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;script&gt;
+  function code_toggle() {
+    if (code_shown){
+      $(&#39;div.input&#39;).hide(&#39;500&#39;);
+      $(&#39;#toggleButton&#39;).val(&#39;Show Code&#39;)
+    } else {
+      $(&#39;div.input&#39;).show(&#39;500&#39;);
+      $(&#39;#toggleButton&#39;).val(&#39;Hide Code&#39;)
     }
-    $( document ).ready(code_toggle);
+    code_shown = !code_shown
+  }
+
+  $( document ).ready(function(){
+    code_shown=false;
+    $(&#39;div.input&#39;).hide()
+  });
 &lt;/script&gt;
 </pre></div>
 
@@ -11781,24 +11858,40 @@ div#notebook {
 
 <div class="output_html rendered_html output_subarea ">
 <script>
-    var code_show=true; //true -> hide code at first
-
-    function code_toggle() {
-        $('div.prompt').hide(); // always hide prompt
-
-        if (code_show){
-            $('div.input').hide();
-        } else {
-            $('div.input').show();
-        }
-        code_show = !code_show
+  function code_toggle() {
+    if (code_shown){
+      $('div.input').hide('500');
+      $('#toggleButton').val('Show Code')
+    } else {
+      $('div.input').show('500');
+      $('#toggleButton').val('Hide Code')
     }
-    $( document ).ready(code_toggle);
+    code_shown = !code_shown
+  }
+
+  $( document ).ready(function(){
+    code_shown=false;
+    $('div.input').hide()
+  });
 </script>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; id=&quot;toggleButton&quot; value=&quot;Show Code&quot;&gt;&lt;/form&gt;
+</pre></div>
+
+</div>
 </div>
 </div>
 
@@ -11851,6 +11944,35 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;hr&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<hr>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11872,11 +11994,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
-&lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0005.JPG&quot;&gt;
+&lt;hr&gt;
 </pre></div>
 
 </div>
@@ -11890,7 +12012,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
-<img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0005.JPG">
+<hr>
 </div>
 
 </div>
@@ -11909,6 +12031,41 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;figure style=&quot;border: 1px solid #000&quot;&gt;
+  &lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0005.JPG&quot;&gt;
+  &lt;figcaption&gt;&lt;u&gt;Figure 1.&lt;/u&gt; Five conceptual layers of Hercules.&lt;/figcaption&gt;
+&lt;/figure&gt;    
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<figure style="border: 1px solid #000">
+  <img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0005.JPG">
+  <figcaption><u>Figure 1.</u> Five conceptual layers of Hercules.</figcaption>
+</figure>    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11917,6 +12074,35 @@ div#notebook {
 <h1 id="The-Staging-Layer">The Staging Layer<a class="anchor-link" href="#The-Staging-Layer">&#182;</a></h1>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;hr&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<hr>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11940,11 +12126,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
-&lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0006.JPG&quot;&gt;
+&lt;hr&gt;
 </pre></div>
 
 </div>
@@ -11958,7 +12144,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
-<img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0006.JPG">
+<hr>
 </div>
 
 </div>
@@ -11977,22 +12163,16 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bulk-to-Incremental">Bulk to Incremental<a class="anchor-link" href="#Bulk-to-Incremental">&#182;</a></h2>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
-&lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0003.JPG&quot;&gt;
+&lt;figure style=&quot;border: 1px solid #000&quot;&gt;
+  &lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0006.JPG&quot;&gt;
+  &lt;figcaption&gt;&lt;u&gt;Figure 2.&lt;/u&gt; Extracting data to Hercules from both internal and external sources.&lt;/figcaption&gt;
+&lt;/figure&gt;    
 </pre></div>
 
 </div>
@@ -12006,7 +12186,48 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
-<img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0003.JPG">
+<figure style="border: 1px solid #000">
+  <img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0006.JPG">
+  <figcaption><u>Figure 2.</u> Extracting data to Hercules from both internal and external sources.</figcaption>
+</figure>    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bulk-to-Incremental">Bulk to Incremental<a class="anchor-link" href="#Bulk-to-Incremental">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;hr&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<hr>
 </div>
 
 </div>
@@ -12025,22 +12246,16 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Realtime-Protocol">Realtime Protocol<a class="anchor-link" href="#Realtime-Protocol">&#182;</a></h2>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
-&lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0004.JPG&quot;&gt;
+&lt;figure style=&quot;border: 1px solid #000&quot;&gt;
+  &lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0003.JPG&quot;&gt;
+  &lt;figcaption&gt;&lt;u&gt;Figure 3.&lt;/u&gt; Bulk data transfer followed by incremental data transfer.&lt;/figcaption&gt;
+&lt;/figure&gt;    
 </pre></div>
 
 </div>
@@ -12054,7 +12269,83 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
-<img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0004.JPG">
+<figure style="border: 1px solid #000">
+  <img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0003.JPG">
+  <figcaption><u>Figure 3.</u> Bulk data transfer followed by incremental data transfer.</figcaption>
+</figure>    
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Realtime-Protocol">Realtime Protocol<a class="anchor-link" href="#Realtime-Protocol">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;hr&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<hr>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;figure style=&quot;border: 1px solid #000&quot;&gt;
+  &lt;img src=&quot;http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0004.JPG&quot;&gt;
+  &lt;figcaption&gt;&lt;u&gt;Figure 4.&lt;/u&gt; Protocol for preparing  realtime data.&lt;/figcaption&gt;
+&lt;/figure&gt;    
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<figure style="border: 1px solid #000">
+  <img src="http://52.39.70.35:9999/files/Hercules%20Playbook/IMG_0004.JPG">
+  <figcaption><u>Figure 4.</u> Protocol for preparing  realtime data.</figcaption>
+</figure>    
 </div>
 
 </div>
@@ -12072,15 +12363,100 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;hr&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<hr>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The testing and production layer houses experimental, specifically normalized, and high preformance databases. We will go more in-depth with these database types and how they are created later in this section. lets first talk about why they are needed. “The real measure of success is the number of experiments that can be crowded into 24 hours.” — Thomas Alva Edison Experimentation is the key to inovation. Inovation is a core principle in our plan to get to Argo 2.0, but our science and analytics teams have no space to do so. In this section is a plan to create this space. As Argo continues to grow and collect disparate systems the need for normalization grows at an alarming pace. Data normalization at its core is often simple, but when our data is already connected to existing production systems, bussiness rules, and protocols we quickly run into many conflicts of interest. How do we increase operational efficiencies by minimising our bloated systems without risking the efficacy of production? The advent of server and database systems has brought us the technology to reach much higher accuracy and speed in our data systems. We must take advantage of this in order to keep up in the digital age.</p>
+<p>The testing and production layer houses experimental, specifically normalized, and high preformance databases. We will go more in-depth with these database types and how they are created later in this section. lets first talk about why they are needed.</p>
+<blockquote><p>“The real measure of success is the number of experiments that can be crowded into 24 hours.” — Thomas Alva Edison</p>
+</blockquote>
+<p>Experimentation is the key to inovation. Inovation is a core principle in our plan to get to Argo 2.0, but our science and analytics teams have no space to do so. In this section is a plan to create this space. As Argo continues to grow and collect disparate systems the need for normalization grows at an alarming pace. Data normalization at its core is often simple, but when our data is already connected to existing production systems, bussiness rules, and protocols we quickly run into many conflicts of interest. How do we increase operational efficiencies by minimising our bloated systems without risking the efficacy of production? The advent of server and database systems has brought us the technology to reach much higher accuracy and speed in our data systems. We must take advantage of this in order to keep up in the digital age.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">HTML</span>
+&lt;script&gt;
+  $(document).ready(function(){
+    $(&#39;div.prompt&#39;).hide();
+    $(&#39;div.back-to-top&#39;).hide();
+    $(&#39;nav#menubar&#39;).hide();
+    $(&#39;.breadcrumb&#39;).hide();
+    $(&#39;.hidden-print&#39;).hide();
+  });
+&lt;/script&gt;
+
+&lt;footer id=&quot;attribution&quot; style=&quot;float:right; color:#999; background:#fff;&quot;&gt;
+Created with Jupyter, by DJW, 10/07/1016.
+&lt;/footer&gt;
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<script>
+  $(document).ready(function(){
+    $('div.prompt').hide();
+    $('div.back-to-top').hide();
+    $('nav#menubar').hide();
+    $('.breadcrumb').hide();
+    $('.hidden-print').hide();
+  });
+</script>
+
+<footer id="attribution" style="float:right; color:#999; background:#fff;">
+Created with Jupyter, by DJW, 10/07/1016.
+</footer>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
